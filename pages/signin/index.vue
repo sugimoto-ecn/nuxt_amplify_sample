@@ -1,10 +1,12 @@
 <template>
-
-<amplify-sign-out></amplify-sign-out>
-
+  <amplify-authenticator>
+  </amplify-authenticator>
 </template>
+
+
 <script>
 import { Hub } from 'aws-amplify'
+
 
 
 export default {
@@ -16,8 +18,8 @@ export default {
   },
   methods: {
     listener(data){
-      if(data.payload.event === 'signOut') {
-        this.$router.push('/signin')
+      if(data.payload.event === 'signIn') {
+        this.$router.push('/')
       }
     }
   }
